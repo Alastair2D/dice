@@ -1,6 +1,7 @@
-require 'dice'
+require 'dice_game'
 
-describe Dice do
+describe DiceGame do
+    let(:dice) { double :dice => 2 }
 
     it { is_expected.to respond_to :roll_die }
 
@@ -17,7 +18,8 @@ describe Dice do
     end
     
     it '#roller(dice) returns random total score for given number of dice rolled' do
-        expect(subject.roller(dice)).to be_between((dice*1),(dice*6))
+        testDice = rand(10)
+        expect(subject.roller(testDice)).to be_between((testDice*1),(testDice*6))
     end
 
 end 

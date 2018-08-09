@@ -1,4 +1,5 @@
-class Dice
+class DiceGame
+    attr_reader :dice
 
     def roll_die 
         rand(1..6)
@@ -11,7 +12,9 @@ class Dice
     end
 
     def roller(dice)
-        dice.times.rand(1..6)
+       scores = []
+       dice.times { scores << roll_die }
+       scores.sum 
     end
 
 end
